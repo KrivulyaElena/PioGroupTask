@@ -1,0 +1,1003 @@
+// variables
+$container: 1730px;
+$colGups: 15px;
+
+$textFont-size: 1rem; // 16px
+
+$breakpoints: (
+  xs: 0,
+  sm: 575px,
+  md: 768px,
+  lg: 1025px,
+  xl: 1200px,
+  xxl: 1440px
+);
+
+//===========  mixins start ===========//
+
+// columns
+$columns: 12;
+$col: $columns;
+
+@mixin col($col, $columns) {
+  width: percentage($col/$columns);
+  padding: 0 $colGups;
+}
+
+//===========  mixins end ===========//
+
+@mixin col-create() {
+  @while $col > 0 {
+    .col-#{$col} {
+      @include col($col, $columns);
+    }
+
+    $col: $col - 1;
+  }
+}
+
+.container {
+  max-width: $container;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  // text-align: center;
+}
+
+.container-sm {
+  max-width: 1160px;
+}
+
+.ba-section {
+  padding: 40px 80px 40px 80px;
+}
+
+// layout
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-right: -$colGups;
+  margin-left: -$colGups;
+}
+
+[class^="col"] {
+  padding-left: $colGups;
+  padding-right: $colGups;
+  width: 100%;
+  min-height: 1px;
+}
+
+@include col-create();
+@import "fonts.scss";
+@import "fontawesome.scss";
+
+// main styles
+
+body {
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 1rem;
+}
+
+//buttons
+a,
+button {
+  transition: 0.3s ease-in;
+  transition-property: color, background-color, opacity;
+}
+
+button,
+.button {
+  cursor: pointer;
+}
+//HEADER                                                                 HEADER
+
+.ba-header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  z-index: 9;
+
+  &__logo {
+    font-size: 2rem;
+    font-weight: bold;
+    &:hover {
+      color: #23d87d;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__select {
+    border: 1px solid #e5e5e5;
+    padding: 0 45px 3px 15px;
+    border-radius: 15px;
+    appearance: none;
+    background-color: #e5e5e5;
+       
+    &__wrapper{
+      position: relative; 
+    }
+
+
+    &__arrow{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+    }
+
+   
+  }
+}
+
+.ba-nav {
+  display: flex;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    overflow: hidden;
+    font-size: 0.875rem;
+    padding-bottom: 5px;
+  }
+
+  &__item + &__item {
+    margin-left: 60px;
+  }
+
+  &__link {
+    color: #000;
+    padding-left: 5px;
+    text-transform: capitalize;
+
+    &:hover,
+    &:focus {
+      color: #462be2;
+      transition: 0.7s;
+    }
+  }
+}
+
+.menu__link {
+  position: relative;
+}
+
+.menu__link:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transform: translateX(-100%);
+  width: 100%;
+  height: 1px;
+  display: inline-block;
+  background-color: #462be2;
+  transition: height 0.5s, transform 1.5s;
+  transition-timing-function: cubic-bezier(0.42, 0, 0, 1.12), cubic-bezier(0.42, 0, 0, 1.12);
+}
+
+.menu__link:hover:after,
+.menu__link:focus:after {
+  transform: translateX(0);
+  height: 2px;
+}
+.toggle-menu {
+  display: none;
+}
+
+// HERO                                                               HERO
+
+.ba-hero {
+  margin-top: 140px;
+
+  &__hidden {
+    display: none;
+    margin: 0 auto;
+  }
+  &__info {
+    &__title {
+      font-size: 3.5rem;
+      line-height: 4.5rem;
+      font-weight: bold;
+      margin-bottom: 95px;
+    }
+
+    &__txt {
+      font-size: 1.125rem;
+      line-height: 2rem;
+      font-weight: normal;
+      margin-bottom: 90px;
+    }
+
+    &__input + &__input {
+      margin-left: 20px;
+    }
+
+    &__email {
+      color: #cbcbcb;
+      padding: 10px 30px;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: 1px solid #cbcbcb;
+      max-width: 40%;
+      &:active,
+      &:hover {
+        color: #462be2;
+        border-color: #462be2;
+      }
+    }
+
+    &__btn {
+      color: #fff;
+      text-transform: uppercase;
+      padding: 10px 30px;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: 1px solid #462be2;
+      background-color: #462be2;
+      max-width: 50%;
+      &:hover {
+        background-color: #fff;
+        color: #462be2;
+      }
+    }
+  }
+}
+
+//generalInfo                                                        generalInfo
+
+.ba-generalInfo {
+  background: {
+    image: url(../images/bg.png);
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 673px;
+  &__container {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+    max-width: 1060px;
+  }
+}
+
+.ba-section__title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: currentColor;
+  margin-top: 60px;
+}
+
+//FOR WHO                                                           FOR WHO
+
+.ba-who {
+  &__container {
+    padding-top: 100px;
+  }
+
+  &__card {
+    &__title {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+      font-weight: bold;
+      margin: 45px 0;
+    }
+    &__txt {
+      font-size: 1rem;
+    }
+  }
+}
+
+//FEATURES                                                          FEATURES
+
+.ba-features {
+  background-color: #252f5a;
+  color: #fff;
+  padding-bottom: 100px;
+
+  &__subtitle {
+    font-size: 1.125rem;
+    line-height: 2rem;
+    margin: 55px auto 120px auto;
+    text-align: center;
+    max-width: 900px;
+  }
+
+  &__txt {
+    padding: 125px 0;
+    border-top: 1px dashed #ff8a33;
+    border-bottom: 1px dashed #ff8a33;
+
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__row {
+    padding-top: 100px;
+    margin: 0 auto;
+
+    & + & {
+      margin-top: 50px;
+    }
+  }
+  &__card {
+    &__title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 50px;
+    }
+    &__list {
+      list-style-type: none;
+    }
+
+    &__item {
+      font-size: 1.5rem;
+      line-height: 1.25rem;
+      &:before {
+        content: "-";
+        margin-right: 20px;
+      }
+
+      & + & {
+        margin-top: 30px;
+      }
+    }
+    &-image {
+      font-size: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    &-img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  &__decoration {
+    position: absolute;
+    top: 23%;
+    left: 5%;
+  }
+}
+
+//ADVANTAGES                                                        ADVANTAGES
+
+.ba-advantages {
+  background-color: #23d87d;
+  color: #fff;
+  padding-bottom: 100px;
+
+  &__container {
+    margin-top: 125px;
+    text-align: center;
+  }
+  &__row {
+    justify-content: center;
+  }
+  &__row + &__row {
+    margin-top: 140px;
+  }
+
+  &__card {
+    position: relative;
+  }
+
+  &__decoration {
+    position: absolute;
+    top: -10%;
+  }
+
+  &__decoration {
+    left: 32%;
+  }
+}
+
+//APPLICATIONS                                                      APPLICATIONS
+
+.ba-applications {
+  background-color: #ffe07d;
+  color: #000;
+  padding-bottom: 100px;
+
+  &__container {
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  &__txt {
+    font-size: 1rem;
+    margin: 55px 0 0 10px;
+  }
+}
+
+//PARTNERS                                                          PARTNERS
+
+.ba-partners {
+  &__list {
+    padding-top: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+//DEMO                                                              DEMO
+
+.ba-demo {
+  &__title {
+    margin-bottom: 75px;
+  }
+
+  &__container {
+    min-height: 1056px;
+    background: {
+      image: url(../images/demo-bg.png);
+      position: center;
+      repeat: no-repeat;
+      size: contain;
+    }
+    display: flex;
+    justify-content: center;
+  }
+
+  &__form {
+    padding: 35px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background-color: #23d87d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 570px;
+    width: 560px;
+  }
+
+  &__input {
+    padding: 10px 30px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 30px;
+
+    &::placeholder {
+      color: #fff;
+    }
+
+    &:hover,
+    &:active {
+      background-color: #ffffff75;
+    }
+  }
+  &__textarea {
+    height: 240px;
+  }
+  &__btn {
+    background-color: #462be2;
+    color: #fff;
+    border: 1px solid #462be2;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    &:hover {
+      color: #462be2;
+      background-color: #fff;
+    }
+  }
+}
+
+//FOOTER                                                            FOOTER
+
+.ba-footer {
+  max-height: 140px;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    height: 140px;
+    border-top: 2px dashed #8b90a7;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__links {
+    &__item + &__item {
+      margin-left: 25px;
+    }
+  }
+
+  &__link {
+    &:hover {
+      color: #23d87d;
+      text-decoration: underline;
+    }
+
+    &-blue {
+      color: #8376e9;
+    }
+    &-lightblue {
+      color: #359fdd;
+    }
+  }
+}
+
+@media (max-width: 1390px) {
+  .menu {
+    &__item + &__item {
+      margin-left: 30px;
+    }
+  }
+
+  .ba-hero {
+    &__info {
+      &__title {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+        margin-bottom: 55px;
+      }
+
+      &__input + &__input {
+        margin-left: 10px;
+      }
+
+      &__email {
+        font-size: 0.875rem;
+      }
+
+      &__btn {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  .ba-section__title {
+    margin-top: 0;
+  }
+
+  .ba-who__container {
+    padding-top: 50px;
+  }
+  .ba-who__card__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: 20px 0;
+  }
+
+  .ba-features__subtitle {
+    margin: 30px auto;
+    text-align: center;
+    max-width: 900px;
+  }
+
+  .ba-features__txt {
+    padding: 60px 0;
+  }
+
+  .ba-features__row {
+    padding-top: 50px;
+  }
+
+  .ba-features__card__title {
+    margin-bottom: 25px;
+  }
+
+  .ba-features__card__item {
+    font-size: 1.25rem;
+    line-height: 1rem;
+  }
+
+  .ba-advantages__container {
+    margin-top: 60px;
+  }
+
+  .ba-generalInfo {
+    min-height: 495px;
+  }
+}
+
+@media (max-width: 1275px) {
+  .ba-hero {
+    &__info {
+      &__title {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        line-height: 3rem;
+      }
+      &__txt {
+        margin-bottom: 30px;
+      }
+
+      &__input + &__input {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+      &__email {
+        text-align: center;
+        min-width: 100%;
+      }
+
+      &__btn {
+        display: block;
+        min-width: 100%;
+      }
+    }
+  }
+
+  .ba-partners {
+    &__list {
+      padding-top: 40px;
+      flex-direction: column;
+    }
+    &__item + &__item {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 976px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+
+    &__item + &__item {
+      margin: 0;
+    }
+
+    &__link {
+      text-align: center;
+      text-transform: uppercase;
+      color: #000;
+      transition: color 0.3s;
+      display: block;
+      font-size: 14px;
+      padding: 0;
+    }
+  }
+
+  .ba-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 100%;
+    background-color: #1ed065;
+    padding: 5px 15px;
+    display: none;
+    padding: 25px 0;
+
+    &.open {
+      display: block;
+      text-align: center;
+    }
+  }
+  .ba-header__container {
+    position: relative;
+  }
+  .toggle-menu {
+    display: block;
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30%;
+
+    &__btn {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      width: 40px;
+      height: 45px;
+      background-color: transparent;
+      appearance: none;
+      box-shadow: none;
+      border-radius: none;
+      border: none;
+    }
+
+    &__lines {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #1ed065;
+      width: 100%;
+      height: 4px;
+
+      &:before,
+      &:after {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #1ed065;
+        content: "";
+        transition-delay: 0.1s;
+      }
+
+      &:before {
+        top: -15px;
+      }
+
+      &:after {
+        bottom: -15px;
+      }
+    }
+  }
+
+  .toggle-menu-open {
+    &__btn {
+    }
+
+    &__lines {
+      background-color: transparent;
+
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .ba-hero {
+    margin-top: 60px;
+  }
+
+  .ba-who {
+    &__container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__card {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .ba-demo {
+    padding: 0;
+  }
+
+  .ba-demo__title {
+    margin-bottom: 15px;
+  }
+  .ba-demo__container {
+    min-height: 895px;
+  }
+  .ba-features__row + .ba-features__row {
+    margin-top: 0;
+  }
+
+  .ba-applications {
+    padding-bottom: 40px;
+  }
+  .ba-applications__txt {
+    margin: 10px 0;
+  }
+
+  .ba-advantages__row + .ba-advantages__row {
+    margin-top: 20px;
+  }
+
+  .ba-advantages__card {
+    width: 45%;
+    padding: 5px;
+  }
+  .ba-advantages {
+    padding-bottom: 40px;
+
+    &__txt {
+      font-size: 1.5rem;
+    }
+  }
+
+  .ba-features__card__item {
+    font-size: 1rem;
+  }
+
+  .ba-features__card__item + .ba-features__card__item {
+    margin-top: 10px;
+  }
+
+  .ba-features__row {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .ba-demo__container {
+    min-height: 715px;
+  }
+  .ba-hero {
+    &__hidden {
+      display: inline-block;
+    }
+    &__info {
+      &__title {
+        font-size: 1.7rem;
+      }
+
+      &__txt-desktop {
+        display: none;
+      }
+      &__form-desktop {
+        display: none;
+      }
+    }
+  }
+
+  .ba-features {
+    &__row + &__row {
+      margin-top: 15px;
+    }
+    &__card {
+      width: 100%;
+    }
+    &__card-image {
+      display: none;
+    }
+    &__txt {
+      padding: 30px 0;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .ba-demo__container {
+    min-height: 645px;
+  }
+
+  .toggle-menu {
+    right: 35%;
+  }
+
+  .ba-hero {
+    &__info {
+      width: 100%;
+    }
+    &__image {
+      width: 100%;
+    }
+  }
+  .ba-applications {
+    &__info {
+      width: 100%;
+    }
+    &__title {
+      text-align: center;
+    }
+    &__image {
+      width: 100%;
+    }
+  }
+
+  .ba-partners {
+    padding-bottom: 0;
+  }
+
+  .ba-footer__container {
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+  }
+
+  .ba-advantages {
+    &__txt {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .ba-demo {
+    &__container {
+      min-height: 460px;
+    }
+    &__textarea {
+      height: 150px;
+    }
+    &__form {
+      height: 450px;
+      width: 90%;
+    }
+  }
+  .toggle-menu {
+    right: 40%;
+  }
+
+  .ba-generalInfo {
+    min-height: 280px;
+  }
+  .ba-generalInfo__txt {
+    font-size: 1.125rem;
+  }
+
+  .ba-section {
+    padding: 20px;
+  }
+
+  .ba-demo__input {
+    font-size: 1rem;
+  }
+
+  .ba-demo__textarea {
+    height: 100px;
+  }
+  .ba-demo__form {
+    height: 415px;
+  }
+
+  .ba-section__title {
+    font-size: 2rem;
+  }
+
+  .ba-who__container,
+  .ba-advantages__container,
+  .ba-partners__list {
+    padding-top: 10px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .ba-footer__list {
+    flex-direction: column;
+  }
+  .ba-footer__container {
+    min-height: 140px;
+  }
+
+  .ba-advantages__card {
+    width: 60%;
+    padding: 10px 0;
+  }
+  .ba-demo__input {
+    font-size: 0.875rem;
+  }
+}
+
+

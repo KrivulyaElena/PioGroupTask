@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>testTask</title>
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="stylesheet" href="style/app.css">
+    <link rel="stylesheet" href="style/animate.css">
+</head>
+
+<body>
+    <header class="ba-header ba-section">
+        <div class="container ba-header__container">
+            <h1 class=" ba-header__logo" id="logo">
+                <a href="#">DrivEd</a>
+            </h1>
+            <nav class="ba-nav">
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a href="#ba-who" class="menu__link">Для кого</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#ba-features" class="menu__link">Функции</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#ba-advantages" class="menu__link">Преимущества</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#ba-demo" class="menu__link">Заявка на демо</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#ba-footer" class="menu__link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <span class="toggle-menu">
+                <button class="toggle-menu__btn">
+                    <span class="toggle-menu__lines"></span>
+                </button>
+            </span>
+            <div class="ba-header__select__wrapper">
+                <select class="ba-header__select">
+                    <option>Рус</option>
+                    <option>Укр</option>
+                    <option>Eng</option>
+                </select>
+                <i class="fas fa-chevron-down ba-header__select__arrow"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="ba-section ba-hero">
+            <div class="row">
+                <div class="ba-hero__info col-6">
+                    <h2 class="ba-hero__info__title ba-hero__info__title">Универсальная обучающая платформа для
+                        управления образовательными
+                        процессами</h2>
+                    <p class="ba-hero__info__txt ba-hero__info__txt-desktop">Автоматизация процессов обучения и
+                        управления данными процессами,
+                        является большим преимуществом
+                        для любого учебного заведения или бизнеса.</p>
+                    <form class="ba-hero__info__form ba-hero__info__form-desktop">
+                        <input class="ba-hero__info__email ba-hero__info__input" type="email" name="email"
+                            placeholder="Введите ваш email">
+                        <button class="ba-hero__info__btn ba-hero__info__input" type="submit">ПОЛУЧИТЬ
+                            КОНСУЛЬТАЦИЮ</button>
+                    </form>
+                </div>
+                <div class="ba-hero__image col-6 wow slideInDown">
+                    <img class="ba-hero__img " src="images/ba-hero.png" alt="ba-hero">
+                </div>
+            </div>
+            <div class="row ba-hero__hidden">
+                <p class="ba-hero__info__txt">Автоматизация процессов обучения и управления данными процессами,
+                    является большим преимуществом
+                    для любого учебного заведения или бизнеса.
+                </p>
+                <form class="ba-hero__info__form">
+                    <input class="ba-hero__info__email ba-hero__info__input" type="email" name="email"
+                        placeholder="Введите ваш email">
+                    <button class="ba-hero__info__btn ba-hero__info__input" type="submit">ПОЛУЧИТЬ
+                        КОНСУЛЬТАЦИЮ</button>
+                </form>
+            </div>
+        </section>
+        <section class="ba-section ba-generalInfo wow pulse">
+            <div class="ba-generalInfo__container">
+                <p class="ba-generalInfo__txt">
+                    DrivEd — масштабируемая платформа, которая может быть адаптирована к вашим
+                    конкретным бизнес-потребностям, независимо от других систем управления
+                    обучением, благодаря простоте использования, конфигурации и безопасности.
+                    Упрощает управление обучением, от студенческих дел, HR, бухгалтерского учета,
+                    расчета заработной платы и т. д.
+                </p>
+            </div>
+        </section>
+        <section class="ba-who ba-section" id="ba-who">
+            <h3 class="ba-section__title">Для кого</h3>
+            <div class="row ba-who__container">
+                <div class="col-4 ba-who__card wow slideInDown">
+                    <div class="ba-who__card__image">
+                        <img class="ba-who__card__img" src="images/who-1.png" alt="who">
+                    </div>
+                    <p class="ba-who__card__title">Образовательным проектам и учреждениям</p>
+                    <p class="ba-who__card__txt">Офлайн и онлайн школы, университеты и любые
+                        другие образовательные проекты с помощью
+                        данной системы получают возможность
+                        управления контентом образовательных
+                        программ, предоставление доступа к
+                        программам обучения в онлайне, отслеживание
+                        успеваемости студентов, ведение финансовой
+                        отчетности и многое другое.</p>
+                </div>
+                <div class="col-4 ba-who__card wow slideInUp">
+                    <div class="ba-who__card__image">
+                        <img class="ba-who__card__img" src="images/who-2.png" alt="who">
+                    </div>
+                    <p class="ba-who__card__title">Индивидуальным преподавателям, коучам, тренерам</p>
+                    <p class="ba-who__card__txt">Офлайн и онлайн школы, университеты и любые
+                        другие образовательные проекты с помощью
+                        данной системы получают возможность
+                        управления контентом образовательных
+                        программ, предоставление доступа к
+                        программам обучения в онлайне, отслеживание
+                        успеваемости студентов, ведение финансовой
+                        отчетности и многое другое.</p>
+                </div>
+                <div class="col-4 ba-who__card wow slideInDown">
+                    <div class="ba-who__card__image">
+                        <img class="ba-who__card__img" src="images/who-3.png" alt="who">
+                    </div>
+                    <p class="ba-who__card__title">Владельцам и управляющим бизнеса для обучения сотрудников</p>
+                    <p class="ba-who__card__txt">Офлайн и онлайн школы, университеты и любые
+                        другие образовательные проекты с помощью
+                        данной системы получают возможность
+                        управления контентом образовательных
+                        программ, предоставление доступа к
+                        программам обучения в онлайне, отслеживание
+                        успеваемости студентов, ведение финансовой
+                        отчетности и многое другое.</p>
+                </div>
+            </div>
+        </section>
+        <section class="ba-features ba-section" id="ba-features">
+            <h3 class="ba-section__title">Основные особенности</h3>
+            <p class="ba-features__subtitle">Система состоит из трех частей. Первая - это личный кабинет студента.
+                Вторая - это система управления обучением и управление внутренними процессами и финансами.
+            </p>
+            <div class="container container-sm">
+                <p class="ba-features__txt">Система масштабируется в обе стороны, если вам не нужны какие-либо функции
+                    мы уберем их из системы, что повлечет за собой удешевление продукта, и наоборот, мы
+                    можем включить существующие либо создать новые функции под ваши потребности
+                </p>
+                <div class="row ba-features__row">
+                    <div class="col-5 ba-features__card">
+                        <p class="ba-features__card__title">Личный кабинет студента</p>
+                        <ul class="ba-features__card__list">
+                            <li class="ba-features__card__item">Изучение материалов и прохождение тестирования онлайн
+                            </li>
+                            <li class="ba-features__card__item">Общение с наставником в режиме реального времени</li>
+                            <li class="ba-features__card__item">Наглядное отображение успеваемости</li>
+                            <li class="ba-features__card__item">Автоматическое формирование дипломов по окончанию
+                                обучения</li>
+                            <li class="ba-features__card__item">Календарь занятий</li>
+                            <li class="ba-features__card__item">Доступ к материалам в любое время</li>
+                        </ul>
+                    </div>
+                    <div class="col-7 ba-features__card-image">
+                        <img src="images/features-1.png" alt="ba-features" class="ba-features__card-img">
+                        <div class="ba-features__decoration">
+                            <img src="images/features-2.png" alt="ba-features" class="ba-features__decoration-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="row ba-features__row">
+                    <div class="col-7 ba-features__card-image">
+                        <img src="images/features-1.png" alt="ba-features" class="ba-features__card-img">
+                        <div class="ba-features__decoration">
+                            <img src="images/features-2.png" alt="ba-features" class="ba-features__decoration-img">
+                        </div>
+                    </div>
+                    <div class="col-5 ba-features__card">
+                        <p class="ba-features__card__title">Управление внутренними процессами и финансами</p>
+                        <ul class="ba-features__card__list">
+                            <li class="ba-features__card__item">Управленческий и финансовый учет</li>
+                            <li class="ba-features__card__item">Контроль и управление продажами</li>
+                            <li class="ba-features__card__item">Инструменты аналитики</li>
+                            <li class="ba-features__card__item">Управление доступами для сотрудников</li>
+                            <li class="ba-features__card__item">Ведение базы клиентов и пользователей</li>
+                            <li class="ba-features__card__item">Мониторинг и отслеживание действий пользователя</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row ba-features__row">
+                    <div class="col-5 ba-features__card">
+                        <p class="ba-features__card__title">Личный кабинет студента</p>
+                        <ul class="ba-features__card__list">
+                            <li class="ba-features__card__item">Изучение материалов и прохождение тестирования онлайн
+                            </li>
+                            <li class="ba-features__card__item">Общение с наставником в режиме реального времени</li>
+                            <li class="ba-features__card__item">Наглядное отображение успеваемости</li>
+                            <li class="ba-features__card__item">Автоматическое формирование дипломов по окончанию
+                                обучения</li>
+                            <li class="ba-features__card__item">Календарь занятий </li>
+                            <li class="ba-features__card__item">Доступ к материалам в любое время</li>
+                        </ul>
+                    </div>
+                    <div class="col-7 ba-features__card-image">
+                        <img src="images/features-1.png" alt="ba-features" class="ba-features__card-img">
+                        <div class="ba-features__decoration">
+                            <img src="images/features-2.png" alt="ba-features" class="ba-features__decoration-img">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="ba-advantages ba-section wow pulse" id="ba-advantages">
+            <h3 class="ba-section__title">Преимущества</h3>
+            <div class="container container-sm ba-advantages__container">
+                <div class="row ba-advantages__row">
+                    <div class="col-3 ba-advantages__card">
+                        <div class="ba-advantages__image">
+                            <img class="ba-advantages__img" src="images/advantage-1.png" alt="img">
+                        </div>
+                        <div class="ba-advantages__decoration">
+                            <img class="ba-advantages__decoration-img" src="images/Group-1.png" alt="img">
+                        </div>
+                        <p class="ba-advantages__txt">Повышение качества образовательных услуг</p>
+                    </div>
+                    <div class="col-3 ba-advantages__card">
+                        <div class="ba-advantages__image">
+                            <img class="ba-advantages__img" src="images/advantage-2.png" alt="img">
+                        </div>
+                        <div class="ba-advantages__decoration">
+                            <img class="ba-advantages__decoration-img" src="images/Group-2.png" alt="img">
+                        </div>
+                        <p class="ba-advantages__txt">Повышение качества образовательных услуг</p>
+                    </div>
+                    <div class="col-3 ba-advantages__card">
+                        <div class="ba-advantages__image">
+                            <img class="ba-advantages__img" src="images/advantage-3.png" alt="img">
+                        </div>
+                        <div class="ba-advantages__decoration">
+                            <img class="ba-advantages__decoration-img" src="images/Group-3.png" alt="img">
+                        </div>
+                        <p class="ba-advantages__txt">Повышение качества образовательных услуг</p>
+                    </div>
+                    <div class="col-3 ba-advantages__card">
+                        <div class="ba-advantages__image">
+                            <img class="ba-advantages__img" src="images/advantage-4.png" alt="img">
+                        </div>
+                        <div class="ba-advantages__decoration">
+                            <img class="ba-advantages__decoration-img" src="images/Group-4.png" alt="img">
+                        </div>
+                        <p class="ba-advantages__txt">Повышение качества образовательных услуг</p>
+                    </div>
+                </div>
+                <div class="row ba-advantages__row">
+                    <div class="col-3 ba-advantages__card ">
+                        <div class="ba-advantages__image">
+                            <img class="ba-advantages__img" src="images/advantage-5.png" alt="img">
+                        </div>
+                        <div class="ba-advantages__decoration">
+                            <img class="ba-advantages__decoration-img" src="images/Group-5.png" alt="img">
+                        </div>
+                        <p class="ba-advantages__txt">Автоматизация продаж</p>
+                    </div>
+                    <div class="col-3 ba-advantages__card">
+                        <div class="ba-advantages__image">
+                            <img class="ba-advantages__img" src="images/advantage-6.png" alt="img">
+                        </div>
+                        <div class="ba-advantages__decoration">
+                            <img class="ba-advantages__decoration-img" src="images/Group-6.png" alt="img">
+                        </div>
+                        <p class="ba-advantages__txt">Увеличение дохода</p>
+                    </div>
+                    <div class="col-3 ba-advantages__card">
+                        <div class="ba-advantages__image">
+                            <img class="ba-advantages__img" src="images/advantage-7.png" alt="img">
+                        </div>
+                        <div class="ba-advantages__decoration">
+                            <img class="ba-advantages__decoration-img" src="images/Group-7.png" alt="img">
+                        </div>
+                        <p class="ba-advantages__txt">Масштабирование</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ba-applications ba-section wow slideInLeft" id="ba-applications">
+            <div class="row ba-applications__container container-sm">
+                <div class="col-6 ba-applications__info">
+                    <h4 class="ba-applications__title">Мобильные приложения</h4>
+                    <p class="ba-applications__txt">В данный момент ведется разработка мобильных приложений под
+                        iOS и Android платформ и уже в скором времени данные приложения
+                        будут доступны для скачивания</p>
+                </div>
+                <div class="col-6 ba-applications__image">
+                    <img src="images/phone.png" alt="phone">
+                </div>
+            </div>
+        </section>
+        <section class="ba-partners ba-section wow slideInRight" id="ba-partners">
+            <h3 class="ba-section__title">Наши партнеры</h3>
+            <div class="container container-sm">
+                <ul class="ba-partners__list">
+                    <li class="ba-partners__item">
+                        <img src="images/partner-1.png" alt="partners">
+                    </li>
+                    <li class="ba-partners__item">
+                        <img src="images/partner-2.png" alt="partners">
+                    </li>
+                    <li class="ba-partners__item">
+                        <img src="images/partner-3.png" alt="partners">
+                    </li>
+                    <li class="ba-partners__item">
+                        <img src="images/partner-4.png" alt="partners">
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="ba-demo ba-section " id="ba-demo">
+            <h3 class="ba-section__title ba-demo__title">Заявка на демо</h3>
+            <div class="container ba-demo__container">
+                <form class="ba-demo__form wow slideInUp">
+                    <input type="text" class="ba-demo__input" placeholder="Ваше имя">
+                    <input type="email" class="ba-demo__input" placeholder="Введите ваш email">
+                    <textarea class="ba-demo__input ba-demo__textarea"
+                        placeholder="Что бы вы хотели обсудить?"></textarea>
+                    <button class="ba-demo__btn" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="ba-footer" id="ba-footer">
+        <div class="container ba-footer__container container-sm">
+            <p class="ba-footer__txt">© 2019. DrivEd by <a href="#" class="ba-footer__link ba-footer__link-blue">
+                    PioGroup</a></p>
+            <ul class=" ba-footer__list">
+                <li class=" ba-footer__links__item   ">
+                    <a href="tel:+38 063 694 50 10" class="ba-footer__link">+38 063 694 50 10</a>
+                </li>
+                <li class=" ba-footer__links__item">
+                    <a href="mailto:ask@drivedcrm.com"
+                        class="ba-footer__link ba-footer__link-blue">ask@drivedcrm.com</a>
+                </li>
+                <li class=" ba-footer__links__item">
+                    <a href="#" class="ba-footer__link ba-footer__link-lightblue">telegram</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src=" https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous">
+    </script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
